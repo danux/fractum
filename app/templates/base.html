@@ -1,0 +1,53 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Daniel Davies">
+{#    <link rel="icon" href="../../favicon.ico">#}
+
+    <title>Fractum</title>
+
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+        <div class="container">
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif %}
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-error{% endif %}
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}alert-warning{% endif %}
+                            alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<strong>Success!</strong>{% endif %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<strong>Error!</strong>{% endif %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}<strong>Warning!</strong>{% endif %}
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+
+            {% block content %}{% endblock content %}
+
+
+        </div> <!-- /container -->
+
+        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="{% static "js/main.min.js" %}"></script>
+        {% block extra_scripts %}{% endblock extra_scripts %}
+    </body>
+</html>

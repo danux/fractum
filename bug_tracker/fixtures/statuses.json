@@ -1,0 +1,62 @@
+[
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 1,
+    "fields": {
+      "title": "New",
+      "description": "This is a new issue that has yet to be reviewed.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  },
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 2,
+    "fields": {
+      "title": "Investigating",
+      "description": "The issue is being investigated. The issue will be updated as soon as we know more.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  },
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 3,
+    "fields": {
+      "title": "Repairing",
+      "description": "The cause of the issue has been found and now it's being fixed.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  },
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 4,
+    "fields": {
+      "title": "Fixed",
+      "description": "The issue has now been fixed. If you are satisfied that the issue has now be resolved you can close it. Otherwise, you may reopen it for further investigation.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  },
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 5,
+    "fields": {
+      "title": "Reopened",
+      "description": "The issue has been reopened and requires a response.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  },
+  {
+    "model": "bug_tracker.BugStatus",
+    "pk": 6,
+    "fields": {
+      "title": "Closed",
+      "description": "The issue has now been closed.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  }
+]

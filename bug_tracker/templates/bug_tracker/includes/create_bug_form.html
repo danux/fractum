@@ -1,0 +1,80 @@
+<!-- Reference -->
+<div class="form-group{% if form.reference.errors %} has-error{% endif %}">
+    <label for="id_reference">Set a reference for the issue:</label>
+    {% if form.reference.errors %}
+        <p class="error-list help-block">There was an error on this field.</p>
+        <ul class="error-list">
+            {% for error in form.reference.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.reference }}
+    <a data-toggle="collapse" href="#referenceHelp" aria-expanded="false" aria-controls="collapseExample">
+        <span class="glyphicon glyphicon-info-sign"></span> More information&hellip;
+    </a>
+    <div class="collapse help-block" id="referenceHelp">
+        The reference should be a short summary of what you are seeing. Keep it simple. This will
+        allow you to recognise the issue and help prevent others from creating duplicates.
+    </div>
+</div>
+
+<!-- Report -->
+<div class="form-group{% if form.report.errors %} has-error{% endif %}">
+    <label for="id_report">Please tell us what happened:</label>
+    {% if form.report.errors %}
+        <p class="error-list help-block">There was an error on this field.</p>
+        <ul class="error-list">
+            {% for error in form.report.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.report }}
+    <a data-toggle="collapse" href="#reportHelp" aria-expanded="false" aria-controls="collapseExample">
+        <span class="glyphicon glyphicon-info-sign"></span> More information&hellip;
+    </a>
+    <div class="collapse help-block" id="reportHelp">
+        When logging a bug there's some important information that will help us resolve
+        your issue as quickly as possible. Please try to include details about the following
+        in your report.
+        <ul>
+            <li>
+                What were you trying to do?
+            </li>
+            <li>
+                What did you expect to happen?
+            </li>
+            <li>
+                What actually happened?
+            </li>
+            <li>
+                What did you see in your browser, was there an error message?
+            </li>
+            <li>
+                Did you try anything to work around the bug?
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- URL -->
+<div class="form-group{% if form.url.errors %} has-error{% endif %}">
+    <label for="id_url">Do you have the web address?</label>
+    {% if form.url.errors %}
+        <ul class="error-list">
+            {% for error in form.url.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.url }}
+    <a data-toggle="collapse" href="#urlHelp" aria-expanded="false" aria-controls="collapseExample">
+        <span class="glyphicon glyphicon-info-sign"></span> More information&hellip;
+    </a>
+    <div class="collapse help-block" id="urlHelp">
+        It helps to know the address of the web page where the issue is occurring.
+        Please copy the web address exactly as it appears at the top of your browser. Not sure
+        how? <a href="#">View an example.</a>
+    </div>
+</div>

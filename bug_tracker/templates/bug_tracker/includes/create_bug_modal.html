@@ -1,0 +1,23 @@
+<!-- Modal -->
+<div class="modal fade text-left" id="createBugModal" tabindex="-1" role="dialog" aria-labelledby="createBugModalLobel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" action="{% url 'bug_tracker:bug_create' key=bucket.key %}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="createBugModalLobel">Report issue</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {% with form=bug_form %}
+                        {% include 'bug_tracker/includes/create_bug_form.html' %}
+                    {% endwith %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Report issue">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

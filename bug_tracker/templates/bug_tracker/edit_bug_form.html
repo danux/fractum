@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3"></div>
+        <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
+            <p>
+                <a href="{{ form.instance.get_absolute_url }}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>Cancel and return to {{ form.instance.slug }}
+                </a>
+            </p>
+            <h1>Edit {{ form.instance.slug }}</h1>
+            <p>
+                You are updating <strong>{{ form.instance.slug }}</strong>.
+            </p>
+            <div class="well well-sm">
+                <form method="post">
+                    {% csrf_token %}
+
+                    {% include 'bug_tracker/includes/edit_bug_form.html' %}
+
+                    <button type="submit" class="btn btn-lg btn-primary center-block">Edit issue</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

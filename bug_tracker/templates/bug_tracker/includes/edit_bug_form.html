@@ -1,0 +1,40 @@
+<!-- Reference -->
+<div class="form-group{% if form.reference.errors %} has-error{% endif %}">
+    <label for="id_reference">Change reference:</label>
+    {% if form.reference.errors %}
+        <p class="error-list help-block">There was an error on this field.</p>
+        <ul class="error-list">
+            {% for error in form.reference.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.reference }}
+</div>
+
+<!-- Report -->
+<div class="form-group{% if form.report.errors %} has-error{% endif %}">
+    <label for="id_report">Change what happened:</label>
+    {% if form.report.errors %}
+        <p class="error-list help-block">There was an error on this field.</p>
+        <ul class="error-list">
+            {% for error in form.report.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.report }}
+</div>
+
+<!-- URL -->
+<div class="form-group{% if form.url.errors %} has-error{% endif %}">
+    <label for="id_url">Change the web address:</label>
+    {% if form.url.errors %}
+        <ul class="error-list">
+            {% for error in form.url.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.url }}
+</div>

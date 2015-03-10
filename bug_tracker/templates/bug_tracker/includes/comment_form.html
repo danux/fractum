@@ -1,0 +1,13 @@
+<!-- Comment -->
+<div class="form-group{% if form.comment.errors %} has-error{% endif %}">
+    <label for="id_comment">Your comment:</label>
+    {% if form.comment.errors %}
+        <p class="error-list help-block">There was an error on this field.</p>
+        <ul class="error-list">
+            {% for error in form.comment.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {{ form.comment }}
+</div>

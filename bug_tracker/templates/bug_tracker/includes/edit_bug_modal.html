@@ -1,0 +1,23 @@
+<!-- Modal -->
+<div class="modal fade text-left" id="editBugModal" tabindex="-1" role="dialog" aria-labelledby="editBugModalLobel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" action="{% url 'bug_tracker:bug_update' slug=object.slug %}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="editBugModalLobel">Edit {{ object.slug }}</h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {% with form=edit_bug_form %}
+                        {% include 'bug_tracker/includes/edit_bug_form.html' %}
+                    {% endwith %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Edit issue">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

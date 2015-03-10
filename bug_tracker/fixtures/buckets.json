@@ -1,0 +1,13 @@
+[
+  {
+    "model": "bug_tracker.Bucket",
+    "pk": 1,
+    "fields": {
+      "title": "Test Bucket",
+      "key": "test",
+      "description": "A test bucket for development.",
+      "date_created": "2015-01-01 00:00:00+00:00",
+      "date_updated": "2015-01-01 00:00:00+00:00"
+    }
+  }
+]

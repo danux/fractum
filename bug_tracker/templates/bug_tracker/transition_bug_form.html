@@ -1,0 +1,20 @@
+<div class="modal-content">
+    <form method="post" action="{% url 'bug_tracker:bug_transition' slug=bug.slug status_pk=bug_status.pk%}">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="transitionModalLabel">Change status to {{ bug_status.title }}</h4>
+        </div>
+        <div class="modal-body">
+            {% csrf_token %}
+            <!-- Comment -->
+            <div class="form-group{% if form.comment.errors %} has-error{% endif %}">
+                <label for="id_comment">Leave a comment (optional):</label>
+                {{ form.comment }}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save">
+        </div>
+    </form>
+</div>
