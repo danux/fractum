@@ -1,4 +1,4 @@
-django==1.7.4
+django==1.7.6
 django_extensions==1.5.0
 Werkzeug==0.10.1
 gunicorn==19.2.1
