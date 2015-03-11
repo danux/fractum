@@ -182,4 +182,4 @@ class Comment(models.Model):
         """
         Meta properties.
         """
-        ordering = ['-date_created']
+        ordering = ['date_created']
