@@ -8,4 +8,4 @@ fabric==1.10.1
 djangorestframework==3.0.5
 git+https://github.com/bfirsh/django-ordered-model.git#egg=django-ordered-model
 mock==1.0.1
-pyflakes
+pyflakes==0.8.1
