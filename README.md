@@ -4,6 +4,8 @@ Django based bug tracker. Instead of assigning a severity like critical or trivi
 
 Proof of concept only so far. Todo list includes ability to login. It's far from production ready. Includes a few tests.
 
+[![Build Status](https://travis-ci.org/danux/fractum.svg?branch=master)](https://travis-ci.org/danux/fractum)
+
 
 ## Installation
 
