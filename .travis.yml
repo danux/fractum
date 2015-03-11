@@ -4,4 +4,4 @@ python:
 install: "pip install -r requirements.txt"
 before_script:
 - "pyflakes bug_tracker"
-script: "python ./manage.py test bug_tracker django --settings=app.settings"
+script: "python ./manage.py test bug_tracker --settings=app.settings"
