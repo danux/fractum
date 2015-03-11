@@ -43,7 +43,7 @@ class BugCreateView(CreateView):
         """
         Loads the object
         """
-        return Bucket.objects.get(key=self.bucket_key)
+        return get_object_or_404(Bucket, key=self.bucket_key)
 
     def get_context_data(self, **kwargs):
         """

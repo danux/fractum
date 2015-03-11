@@ -68,6 +68,13 @@ class BugCreateViewTestCase(CreateData):
         self.assertEqual(self.bucket, response.context['bucket'])
         self.assertTemplateUsed(response, 'bug_tracker/create_bug_form.html')
 
+    def test_invalid_bucket_gives_404(self):
+        """
+        If the bucket does not exist raise a 404.
+        """
+        response = self.client.get(reverse('bug_tracker:bug_create', kwargs={'key': 999}))
+        self.assertEqual(404, response.status_code)
+
     def test_submitting_form_creates_bug(self):
         """
         Tests that submitting the form creates a bug.
